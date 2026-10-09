@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+    background-color: #0b0e14;
+    color: #f1f5f9;
+}
+
+.app-container {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    border-radius: 20px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+header h1 {
+    margin: 5px 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    color: #94a3b8;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Glassmorphism Cards */
+.card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #f8fafc;
+}
+
+/* Input Fields */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+input {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 12px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+input:focus {
+    border-color: #e6683c;
+}
+
+/* Gradient Buttons */
+.btn-gradient {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366);
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn-gradient:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #38bdf8;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Score Badge Styling */
+.score-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0f172a;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.score-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.badge-high {
+    background: rgba(255, 0, 84, 0.2);
+    color: #ff0054;
+    border: 1px solid #ff0054;
+}
+
+.badge-medium {
+    background: rgba(254, 228, 64, 0.2);
+    color: #fee440;
+    border: 1px solid #fee440;
+}
+
+.badge-low {
+    background: rgba(0, 245, 212, 0.2);
+    color: #00f5d4;
+    border: 1px solid #00f5d4;
+}
+
+/* Triggered Flags as Tag Pills */
+.flag-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+}
+
+.flag-pill {
+    background: rgba(255, 0, 84, 0.1);
+    border-left: 3px solid #ff0054;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #f8fafc;
+}
+
+/* Map Styling */
+.location-box {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+}
+
+#map {
+    height: 220px;
+    border-radius: 8px;
+}
+
+.disclaimer {
+    color: #64748b;
+    font-size: 11px;
+    margin-top: 8px;
+    display: block;
+}
+
+/* Comparison Table */
+.compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.acc-box {
+    background: #0f172a;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.acc-box h3 {
+    font-size: 14px;
+    margin-top: 0;
+    color: #e2e8f0;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.compare-table th,
+.compare-table td {
+    border: 1px solid #334155;
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.compare-table th {
+    background: #0f172a;
+    color: #94a3b8;
+}
+
+#historyList {
+    padding: 0;
+    list-style: none;
+}
+
+#historyList li {
+    padding: 10px 0;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}

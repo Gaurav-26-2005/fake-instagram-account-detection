@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Instagram Account Detection</title>
+
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-badge">IG DETECTOR</div>
+            <h1>Fake Profile Detector</h1>
+            <p>Rule-Based Security & Analysis Engine</p>
+        </header>
+
+        <main>
+            <!-- Single Analysis Card -->
+            <section class="card">
+                <h2>Analyze Single Profile</h2>
+                <form id="analyzerForm">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="@e.g. john_doe" required>
+                    </div>
+
+                    <div class="grid-3">
+                        <div class="input-group">
+                            <label for="followers">Followers</label>
+                            <input type="number" id="followers" placeholder="0" min="0" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="following">Following</label>
+                            <input type="number" id="following" placeholder="0" min="0" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="posts">Posts</label>
+                            <input type="number" id="posts" placeholder="0" min="0" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-gradient">Analyze Account</button>
+                </form>
+            </section>
+
+            <!-- Results Section -->
+            <section class="card results-card" id="resultsSection" style="display:none;">
+                <h2>Analysis Overview</h2>
+
+                <div class="score-banner">
+                    <span class="score-label">Risk Meter</span>
+                    <div id="riskScore"></div>
+                </div>
+
+                <div id="explanation"></div>
+
+                <div class="location-box">
+                    <h4>Location Visualization</h4>
+                    <p class="location-text">📍 <strong>Sample Location:</strong> <span id="sampleLocation">New York,
+                            USA</span></p>
+                    <div id="map"></div>
+                    <small class="disclaimer">⚠️ Location is derived from sample account metadata.</small>
+                </div>
+
+                <button id="downloadPdfBtn" class="btn-secondary">⚡ Download PDF Report</button>
+            </section>
+
+            <!-- Account Comparison -->
+            <section class="card">
+                <h2>Side-by-Side Comparison</h2>
+                <form id="compareForm" class="compare-grid">
+                    <div class="acc-box">
+                        <h3>Account A</h3>
+                        <input type="text" id="userA" placeholder="Username" required>
+                        <input type="number" id="followersA" placeholder="Followers" min="0" required>
+                        <input type="number" id="followingA" placeholder="Following" min="0" required>
+                        <input type="number" id="postsA" placeholder="Posts" min="0" required>
+                    </div>
+                    <div class="acc-box">
+                        <h3>Account B</h3>
+                        <input type="text" id="userB" placeholder="Username" required>
+                        <input type="number" id="followersB" placeholder="Followers" min="0" required>
+                        <input type="number" id="followingB" placeholder="Following" min="0" required>
+                        <input type="number" id="postsB" placeholder="Posts" min="0" required>
+                    </div>
+                </form>
+                <button type="button" id="compareBtn" class="btn-gradient" style="margin-top: 15px;">Compare
+                    Accounts</button>
+
+                <div id="comparisonResults" style="display:none; margin-top: 20px;">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th id="thUserA">Account A</th>
+                                <th id="thUserB">Account B</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Followers</td>
+                                <td id="resFolA">-</td>
+                                <td id="resFolB">-</td>
+                            </tr>
+                            <tr>
+                                <td>Following</td>
+                                <td id="resFingA">-</td>
+                                <td id="resFingB">-</td>
+                            </tr>
+                            <tr>
+                                <td>Posts</td>
+                                <td id="resPostsA">-</td>
+                                <td id="resPostsB">-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Risk Score</strong></td>
+                                <td id="resRiskA">-</td>
+                                <td id="resRiskB">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Detection History -->
+            <section class="card">
+                <h2>Recent Logs</h2>
+                <ul id="historyList">
+                    <p class="empty-msg">No previous analyses logged.</p>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="static/script.js"></script>
+</body>
+
+</html>

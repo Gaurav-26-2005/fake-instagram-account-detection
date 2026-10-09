@@ -1,0 +1,23 @@
+[
+  {
+    "username": "john_real_account",
+    "followers": 1250,
+    "following": 450,
+    "posts": 85,
+    "expected_status": "Genuine"
+  },
+  {
+    "username": "bot_follower_99",
+    "followers": 12,
+    "following": 2400,
+    "posts": 0,
+    "expected_status": "Suspicious / Fake"
+  },
+  {
+    "username": "spammer_promo",
+    "followers": 45,
+    "following": 1800,
+    "posts": 1,
+    "expected_status": "Suspicious / Fake"
+  }
+]
